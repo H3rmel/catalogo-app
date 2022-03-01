@@ -1,0 +1,120 @@
+/* 
+  CSS principal do site, usado para fazer alguns resets e estilos
+*/
+
+/* Reset CSS */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 0.875rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #557cf2;
+  height: 1%;
+}
+
+/* CSS Geral */
+
+.app {
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+hr.blue-divider {
+  border-top: 1px solid #557cf2;
+}
+
+h1, h2, h3, p, small {
+  margin: 0;
+}
+
+.display-4 {
+  font-size: 3rem;
+  letter-spacing: .125rem;
+}
+
+.letterspacing {
+  letter-spacing: .125rem;
+}
+
+h1 {
+  font-size: 1.3rem;
+}
+h3 {
+  font-size: 1.2rem;
+}
+p {
+  font-size: .875rem;
+}
+
+/* Nav CSS */
+
+.nav {
+  border-radius: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li button {
+  letter-spacing: .125rem;
+}
+
+/* Banner CSS */
+
+.banner {
+  background-image: url("./app/images/bg1.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 48vh;
+  width: 100%;
+}
+
+/* Banner Media Querie */
+@media (max-width: 37.5rem) {
+  .banner {
+    height: 36vh;
+  }
+}
+
+/* Card */
+
+.item-img {
+  width: 15%;
+  height: 9rem;
+  border-radius: .75rem;
+}
+
+.text, .text-p {
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+}
+
+/* Card Media Querie */
+@media (max-width: 37.5rem) {
+  .item-img {
+    width: 31%;
+    height: 6.25rem;
+    margin-right: 0;
+  }
+
+  .text {
+    width: 14ch;
+  }
+
+  .text-p {
+    width: 22ch;
+  }
+}
