@@ -1,24 +1,38 @@
-import React from "react";
+// React Hook(s)
+import { useEffect, useState } from "react";
 
 // Componentes
 import Navbar from "../components/Navbar/Index";
+import Loading from "../components/Loading/Index";
+import { Valor, ListaProdutos } from "../components/Resumo/Index";
+import Button from "../components/Button/Index";
+
+// LocalStorage
+import { returnCarrinho, returnTotal } from "../hooks/LocalStorage";
 
 const Resumo = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [total, setTotal] = useState(0);
+  const [carrinho, setCarrinho] = useState();
+  const [reload, setReload] = useState(false);
+
+  useEffect(() => {
+    setTotal(returnTotal);
+    (setCarrinho(returnCarrinho) ? setIsLoading(false) : setIsLoading(true));
+  }, [reload]);
+
   return (
     <div className="app bg-faded">
       <Navbar />
-      <div className="container mt-2">
-        <div className="card card-block">
-          <h1 className="text-primary-dark">Resumo do meu pedido</h1>
-          <p className="font-bold text-primary">
-            Valor total do pedido: R$ 00,00
-          </p>
-          <small className="text-muted">Valor mínimo: 50,00</small>
-        </div>
-      </div>
-      <div className="container text-xs-center">
-        <button className="btn btn-success btn-lg px-4 font-light letterspacing">Concluir pedido</button>
-      </div>
+      {!isLoading ? (
+        <Loading />
+      ) : (
+        <>
+          <Valor valor={total} mutedText={"Valor mínimo: R$ 50,00"} />
+          <ListaProdutos itens={carrinho} reload={reload} setReload={setReload} />
+          <Button text={"Concluir pedido"} />
+        </>
+      )}
     </div>
   );
 };

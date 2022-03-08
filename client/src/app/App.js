@@ -1,4 +1,4 @@
-// React Hooks
+// React Hook(s)
 import { useState, useEffect } from "react";
 
 // Componentes
@@ -7,22 +7,21 @@ import Footer from "./components/Footer/Index";
 import Loading from "./components/Loading/Index";
 import Banner from "./components/Banner/Index";
 import Cards from "./components/Cards/Index";
+import { FormCategory } from "./components/Form/Index";
 
-// Hook geral do Axios
+// Axios
 import { getInfo } from "./hooks/Axios";
 
-/*
-  Chama a API e puxa todos os produtos e exibe eles na tela.
-*/
 const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [produtos, setProdutos] = useState([]);
-  let categorias = [];
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     getInfo("produtos/", setProdutos, setIsLoading);
   }, []);
 
+  let categorias = [];
   categorias = produtos.produtos;
   return (
     <div className="app bg-faded">
@@ -32,23 +31,26 @@ const App = () => {
       ) : (
         <>
           <Banner titulo={produtos.dadosDaLoja.titulo} />
-          <div className="container">
-            <form className="mb-2">
-              <input
-                type="text"
-                className="form-control"
-                id="categoryInput"
-                placeholder="Categorias aqui..."
-              />
-            </form>
-            {categorias.map((categoria) => (
+          <FormCategory setSearchTerm={setSearchTerm} categorias={categorias} />
+          {categorias
+            .filter((categoria) => {
+              if (searchTerm === "") {
+                return categoria;
+              } else if (
+                categoria.titulo
+                  .toLowerCase()
+                  .includes(searchTerm.toLowerCase())
+              ) {
+                return categoria;
+              }
+            })
+            .map((categoria) => (
               <Cards
                 key={categoria.id}
                 titulo={categoria.titulo}
                 itens={categoria.produtos}
               />
             ))}
-          </div>
           <Footer />
         </>
       )}

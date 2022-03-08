@@ -1,7 +1,7 @@
-// React Hooks
+// React Hook(s)
 import { useState, useEffect } from "react";
 
-// useParams do React Router
+// React Router
 import { useParams } from "react-router-dom";
 
 // Componentes
@@ -9,18 +9,15 @@ import Navbar from "../components/Navbar/Index";
 import Loading from "../components/Loading/Index";
 import Banner from "../components/Banner/Index";
 import Info from "../components/Info/Index";
-import Adicionais from "../components/Adicionais/Index";
+import { Form } from "../components/Form/Index";
+import { Adicional, AdicionalCheck } from "../components/Adicionais/Index";
 import Carrinho from "../components/Carrinho/Index";
 
-// Axios Hooks
+// Axios
 import { getInfo } from "../hooks/Axios";
 
-/*
-  Pega ID do produto pelo parâmetro passado na rota e chama o endpoint
-  do produto específico.
-*/
 const Produto = () => {
-  // ID do produto em específico
+  // ID do produto
   const { id } = useParams();
 
   const [isLoading, setIsLoading] = useState(false);
@@ -28,8 +25,16 @@ const Produto = () => {
 
   useEffect(() => {
     getInfo(`produto/${id}`, setProduto, setIsLoading);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Infos para serem adicionadas ao objeto do produto.
+  const [observation, setObservation] = useState("");
+  let adicionais = [
+    {id: 1, quantidade: 0},
+    {id: 2, quantidade: 0},
+    {id: 3, quantidade: 0}
+  ]
   return (
     <div className="app bg-faded">
       <Navbar />
@@ -43,18 +48,23 @@ const Produto = () => {
             descricao={produto.descricao}
             preco={produto.preco}
           />
-          <Adicionais/>
           <div className="container">
-          <form className="mb-2">
-              <input
-                type="text"
-                className="form-control"
-                id="categoryInput"
-                placeholder="Ex: Usar produtos sem lactose..."
-              />
-            </form>
+          <h1 className="text-primary mb-2">Adicionais</h1>
+            <Adicional id={1} adicional={adicionais} />
+            <Adicional id={2} adicional={adicionais} />
+            <Adicional id={3} adicional={adicionais} />
           </div>
-          <Carrinho preco={produto.preco} />
+          <Form
+            titulo={"Alguma observação?"}
+            placeholder={"Ex: Usar produtos sem lactose..."}
+            setData={setObservation}
+          />
+          <Carrinho
+            preco={produto.preco}
+            produtoObj={produto}
+            observation={observation}
+            adicionais={adicionais}
+          />
         </>
       )}
     </div>

@@ -2,6 +2,10 @@
   CSS principal do site, usado para fazer alguns resets e estilos
 */
 
+/* Import Animate.css */
+
+@import "animate.css";
+
 /* Reset CSS */
 
 *,
@@ -11,22 +15,15 @@
   scroll-behavior: smooth;
 }
 
-/* Scrollbar */
-
-::-webkit-scrollbar {
-  width: 0.875rem;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #557cf2;
-  height: 1%;
-}
-
 /* CSS Geral */
 
 .app {
   height: 100vh;
   overflow-x: hidden;
+}
+
+.flex-basis {
+  flex-basis: 48%;
 }
 
 hr.blue-divider {
@@ -49,11 +46,17 @@ h1, h2, h3, p, small {
 h1 {
   font-size: 1.3rem;
 }
+
 h3 {
   font-size: 1.2rem;
 }
+
 p {
   font-size: .875rem;
+}
+
+label {
+  font-size: 1rem;
 }
 
 /* Nav CSS */
@@ -91,7 +94,6 @@ ul li button {
 
 .item-img {
   width: 15%;
-  height: 9rem;
   border-radius: .75rem;
 }
 
@@ -114,7 +116,25 @@ ul li button {
     width: 14ch;
   }
 
+  .text-2 {
+    width: 10ch;
+  }
+
   .text-p {
     width: 22ch;
   }
+}
+
+.listaProdutos {
+  max-height: 60vh;
+}
+
+.scroll-overflow {
+  overflow-y: scroll;
+}
+
+/* Modal */
+
+.modal {
+  background: rgba(0, 0, 0, .5);
 }

@@ -9,13 +9,16 @@ import { Link } from "react-router-dom";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css"; // Drawer main CSS
 
+// LocalStorage
+import { productsNumber } from "../../hooks/LocalStorage";
+
 /*
   Componente da barra de navegação & menu drawer do app.
 */
 const Navbar = () => {
   // Controla comportamento do menu drawer
   const [isOpen, setIsOpen] = useState(false);
-
+  const number = productsNumber();
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
   };
@@ -36,9 +39,9 @@ const Navbar = () => {
           <Link to="/resumo" className="btn btn-success tag-badge-block">
             <span
               className="tag-badge tag-badge-danger"
-              data-tag-badge="0"
+              data-tag-badge={number}
             ></span>
-            <span className="icon icon-banking-ledger icon-2x"></span>
+            <span className="icon icon-dollar-circle icon-2x"></span>
           </Link>
           <button className="btn btn-primary" onClick={toggleDrawer}>
             <span className="icon icon-nav-drawer icon-2x"></span>
