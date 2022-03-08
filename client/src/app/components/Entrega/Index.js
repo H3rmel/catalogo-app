@@ -1,8 +1,7 @@
-// All Components from Entrega
-
 // React Hook(s)
 import { useEffect, useState } from "react";
 
+// Forma de entrega do pedido
 const FormaEntrega = ({ setFormaEntrega }) => {
   return (
     <div className="container flex-xs flex-xs-between mb-3">
@@ -40,6 +39,7 @@ const FormaEntrega = ({ setFormaEntrega }) => {
   );
 };
 
+// Informações do usuário para entrega
 const InfosUsuario = ({ setInfos }) => {
   const [nome, setNome] = useState("");
   const [telefone, setTelefone] = useState("");
@@ -76,6 +76,7 @@ const InfosUsuario = ({ setInfos }) => {
   );
 };
 
+// Forma de pagamento do pedido
 const FormaPagamento = ({ setFormaPagamento }) => {
   const options = [
     { value: "Dinheiro" },

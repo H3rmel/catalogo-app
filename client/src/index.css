@@ -2,10 +2,6 @@
   CSS principal do site, usado para fazer alguns resets e estilos
 */
 
-/* Import Animate.css */
-
-@import "animate.css";
-
 /* Reset CSS */
 
 *,
@@ -105,6 +101,7 @@ ul li button {
 }
 
 /* Card Media Querie */
+
 @media (max-width: 37.5rem) {
   .item-img {
     width: 31%;
@@ -123,10 +120,6 @@ ul li button {
   .text-p {
     width: 22ch;
   }
-}
-
-.listaProdutos {
-  max-height: 60vh;
 }
 
 .scroll-overflow {

@@ -12,9 +12,7 @@ import "react-modern-drawer/dist/index.css"; // Drawer main CSS
 // LocalStorage
 import { productsNumber } from "../../hooks/LocalStorage";
 
-/*
-  Componente da barra de navegação & menu drawer do app.
-*/
+// Barra de navegação do App com o Menu Drawer
 const Navbar = () => {
   // Controla comportamento do menu drawer
   const [isOpen, setIsOpen] = useState(false);
@@ -25,6 +23,7 @@ const Navbar = () => {
 
   return (
     <>
+    {/* Navigation bar */}
       <nav className="nav card card-block flex-xs flex-xs-between flex-xs-middle p-2 m-0 bg-primary">
         <Link to="/" className="flex-xs flex-xs-bottom">
           <img
@@ -48,6 +47,7 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
+      {/* Drawer Menu */}
       <Drawer
         open={isOpen}
         onClose={toggleDrawer}

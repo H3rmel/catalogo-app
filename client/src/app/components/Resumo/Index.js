@@ -143,9 +143,10 @@ const ListaProdutos = ({ itens, reload, setReload }) => {
     <>
       {!produtos.hasOwnProperty("carrinho") && produtos.length !== 0 ? (
         <div
-          className={`container listaProdutos py-2 mb-2 ${
+          className={`container py-2 mb-2 ${
             produtos.length > 3 ? "scroll-overflow" : ""
           }`}
+          style={{height: '60vh'}}
         >
           {produtos.map((produto, index) => (
             <Produto

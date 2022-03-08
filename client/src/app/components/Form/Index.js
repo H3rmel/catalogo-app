@@ -1,3 +1,4 @@
+// Formulário para observações dos produtos
 const Form = ({ titulo, placeholder, setData }) => {
   return (
     <div className="container mb-2">
@@ -15,6 +16,7 @@ const Form = ({ titulo, placeholder, setData }) => {
   );
 };
 
+// Formulário de categorias dos produtos
 const FormCategory = ({ setSearchTerm, categorias }) => {
   return (
     <div className="container mb-2">

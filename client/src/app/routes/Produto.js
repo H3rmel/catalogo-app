@@ -10,7 +10,7 @@ import Loading from "../components/Loading/Index";
 import Banner from "../components/Banner/Index";
 import Info from "../components/Info/Index";
 import { Form } from "../components/Form/Index";
-import { Adicional, AdicionalCheck } from "../components/Adicionais/Index";
+import Adicional from "../components/Adicionais/Index";
 import Carrinho from "../components/Carrinho/Index";
 
 // Axios
@@ -31,10 +31,11 @@ const Produto = () => {
   // Infos para serem adicionadas ao objeto do produto.
   const [observation, setObservation] = useState("");
   let adicionais = [
-    {id: 1, quantidade: 0},
-    {id: 2, quantidade: 0},
-    {id: 3, quantidade: 0}
-  ]
+    { id: 1, quantidade: 0 },
+    { id: 2, quantidade: 0 },
+    { id: 3, quantidade: 0 },
+  ];
+
   return (
     <div className="app bg-faded">
       <Navbar />
@@ -49,7 +50,7 @@ const Produto = () => {
             preco={produto.preco}
           />
           <div className="container">
-          <h1 className="text-primary mb-2">Adicionais</h1>
+            <h1 className="text-primary mb-2">Adicionais</h1>
             <Adicional id={1} adicional={adicionais} />
             <Adicional id={2} adicional={adicionais} />
             <Adicional id={3} adicional={adicionais} />

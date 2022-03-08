@@ -11,7 +11,7 @@ const Carrinho = ({ preco, produtoObj, observation, adicionais }) => {
   const [quantity, setQuantity] = useState(1);
   const navigate = useNavigate();
 
-  // Adiciona algumas propriedades no objeto antes de inseri-lo no carrinho
+  // Adiciona algumas propriedades no objeto do produto antes de inseri-lo no carrinho
   const addProperties = () => {
     produtoObj.quantidade = Number(quantity);
     produtoObj.preco = produtoObj.preco * quantity;

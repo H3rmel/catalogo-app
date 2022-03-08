@@ -33,6 +33,7 @@ const Entrega = () => {
   const [infos, setInfos] = useState({ nome: "", telefone: "" });
   const [formaPagamento, setFormaPagamento] = useState("Dinheiro");
 
+  // Realiza pedido e controla comportamento do Modal
   const handleSubmit = async () => {
     let submit = {
       pedido: returnCarrinho(),

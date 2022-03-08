@@ -1,4 +1,4 @@
-// React Hooks
+// React Hook(s)
 import { useEffect, useState } from "react";
 
 const Adicional = ({ id, adicional }) => {
@@ -50,25 +50,4 @@ const Adicional = ({ id, adicional }) => {
   );
 };
 
-const AdicionalCheck = ({ preco, id }) => {
-  return (
-    <div className="flex-xs flex-xs-between flex-xs-middle card px-3 py-2 mb-2">
-      <div>
-        <h6 className="text-gray m-0">Adicional{id}</h6>
-        <p className="text-success font-bold">R$ {preco}</p>
-      </div>
-      <div className="form-check-inline">
-        <input
-          id={`checkboxAdd${id}`}
-          className="form-check-input"
-          type="checkbox"
-        />
-        <label className="form-check-label" htmlFor={`checkboxAdd${id}`}>
-          &nbsp;
-        </label>
-      </div>
-    </div>
-  );
-};
-
-export { Adicional, AdicionalCheck };
+export default Adicional;

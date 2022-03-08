@@ -1,6 +1,7 @@
 // React Router
 import { Link } from "react-router-dom";
 
+// Card único
 const Card = ({ id, titulo, descricao, preco, fotos }) => {
   return (
     <Link to={`/produto/${id}`} className="list-group-item-action card card-hover px-3 py-2 flex-xs flex-xs-middle">
@@ -14,6 +15,7 @@ const Card = ({ id, titulo, descricao, preco, fotos }) => {
   );
 };
 
+// Lista dos cards
 const Cards = ({ titulo, itens }) => {
   const produtos = itens;
 
