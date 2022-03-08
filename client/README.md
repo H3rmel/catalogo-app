@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Executando o Webapp 🚀
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Para executar este webapp é bem simples, primeiramente clone o repositório para sua máquina local...
 
-## Available Scripts
+```
+git clone https://github.com/IsaacHermel/catalogo-app.git
+```
+Você deve utilizar algum terminal como o Git Bash para isso.
 
-In the project directory, you can run:
+Depois disso, acessa a pasta `/client` por meio de um CLI (como o CMD, no meu caso é o Terminal do Windows) e execute o seguinte comando:
 
-### `npm start`
+```
+npm install
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Se tudo correr bem e não houver quaisquer erros, execute logo em seguida o seguinte comando:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+npm start
+```
 
-### `npm test`
+Se estiver tudo certinho, seu navegador irá abrir com o app já rodando e receberá a seguinte mensagem em seu CLI:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+Compiled successfully!
 
-### `npm run build`
+You can now view client in the browser.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  Local:            http://localhost:3000
+  On Your Network:  http://10.1.1.165:3000
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Mas bem, agora vamos falar de algumas outras coisas...
 
-### `npm run eject`
+## Outras tecnologias utilizadas 🛠
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Para este projeto, utilizei algumas tecnologias além do ReactJS, sendo elas as seguintes:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Umbootstrap 🐨
+  
+O Umbootstrap é o Design System da Umbler, ele foi no caso o styleguide obrigatório a ser utilizado nesse desafio. Como eu já venho utilizado ele quase que diariamente para gerenciar o *KoalaSchools* e também já era familiarizado anteriormente com o Bootstrap (O qual foi utilizado como base para o Umbootstrap), eu não tive muitos problemas utilizando o mesmo.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- React Router 🔀
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+O React Router é uma biblioteca desenvolvida especificamente para o ReactJS para criação e gerenciamento das rotas de um webapp, permitindo assim a criação de SPAs (Single Page Applications), utilizei pois o mesmo ele é bastante intuitivo e prático em sua criação de rotas, onde a forma como você declara e manipula elas lembra bastante a forma como você faz em NodeJS utilizando o Express (inclusive, é possível que por baixo dos panos do Router seja até isso que você esteja fazendo 🤔), mas bem, o motivo pelo qual decidi utilizar o Router foi por isso, praticidade e facilidade.
 
-## Learn More
+- Axios 🌐
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+O Axios é uma biblioteca que te permite manipular APIs tanto em NodeJS e navegadores comuns (Chrome, Edge, etc...), utilizei o mesmo por 2 motivos: O primeiro seria de que ele te permite rodar requisições HTTP tanto pelo NodeJS (onde ele utiliza o modulo http) quanto pelos navegadores comuns (onde ele usa o XMLHttpRequests) com o mesmo código, tornando ele assim mais versátil e adaptativo.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Já o segundo motivo seria de que ele realiza alguns procedimentos automáticos, como por exemplo o de transformar em objetos os dados que uma API me retorna quando uso um endpoint via GET, algo que utilizando o `fetch API` eu teria que fazer manualmente, utilizando comandos como o `JSON.stringify()` e afins.
 
-### Code Splitting
+- LocalStorage 📦
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+O LocalStorage na verdade é algo presente em qualquer navegador da internet atualmente, e utilizei ele apenas porque diferente do `sessionStorage`, os dados que são alocados nele não expiram, a não ser que sejam excluídos de forma manual e/ou a página tenha seu cache/cookies limpados (via `CTRL + R` por exemplo).
 
-### Analyzing the Bundle Size
+Mas bem, acho que expliquei todas as tecnologias que utilize, caso tenha faltado alguma ou tenham ficado dúvidas, só me perguntar que eu responderei sem problemas! 😉
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Considerações finais 💙
 
-### Making a Progressive Web App
+Este teste fora muito desafiante, divertido e trabalhoso, sinto que evolui bastante nele como desenvolvedor, seja utilizando novas tecnologias que não havia utilizado anteriormente, bem como com outras boas práticas (comentar código e afins).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Estou muito feliz com o resultado, mas claro, qualquer ponto de melhora, comentário, sugestões e afins, estarei totalmente aberto para ouvir e tentar aprimorar no código.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+É isto, muito obrigado por esta oportunidade.
