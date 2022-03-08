@@ -80,17 +80,17 @@ const Produto = ({
               })
               .map((adicional) => {
                 return(
-                  <div className="form-check disabled m-0">
+                  <div className="form-check disabled m-0" key={adicional.id}>
                   <input
                     id={adicional.id}
-                    class="form-check-input"
+                    className="form-check-input"
                     type="radio"
                     name="radios"
                     disabled
                   />
                   <label
                     className="form-check-label flex-xs flex-xs-between"
-                    for={adicional.id}
+                    htmlFor={adicional.id}
                   >
                     <span>
                       {adicional.quantidade}x Adicional {adicional.id}
