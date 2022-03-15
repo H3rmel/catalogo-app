@@ -137,7 +137,7 @@ const Produto = ({
 };
 
 // Exibe lista de todos os produtos
-const ListaProdutos = ({ itens, reload, setReload }) => {
+const  ListaProdutos = ({ itens, reload, setReload }) => {
   const produtos = itens;
   return (
     <>
